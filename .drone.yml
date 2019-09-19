@@ -1,0 +1,14 @@
+kind: pipeline
+name: default
+
+steps:
+  - name: docker
+    image: plugins/docker:18.09
+    settings:
+      username:
+        from_secret: DOCKER_LOGIN
+      password:
+        from_secret: DOCKER_PASSWORD
+      repo: vvarp/gitlab-portainer-deploy
+      auto_tag: true
+      build_args: DRONE_TAG=${DRONE_TAG}
