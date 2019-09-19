@@ -1,6 +1,6 @@
-FROM python:3.7
+FROM python:3.7-alpine
 
-RUN apt-get install ca-certificates
+RUN apk add --no-cache ca-certificates
 
 ADD . /app
 WORKDIR /app
