@@ -87,3 +87,7 @@ def main(portainer_url, portainer_username, portainer_password, portainer_stack,
     click.echo(click.style(" done", fg="green"))
 
     click.echo(f"\nRequest to update stack finished with HTTP {r.status_code}: \n{json.dumps(r.json(), indent=4)}\n")
+
+    if request.status_code != 200:
+        click.echo(click.style(f"Deployment failed", fg="red"))
+        sys.exit(1)
