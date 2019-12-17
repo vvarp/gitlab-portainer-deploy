@@ -81,7 +81,7 @@ def main(portainer_url, portainer_username, portainer_password, portainer_stack,
         json={
             "StackFileContent": stackfilecontent,
             "Env": stack_env,
-            "Prune": True
+            "Prune": False
         }
     )
     click.echo(click.style(" done", fg="green"))
